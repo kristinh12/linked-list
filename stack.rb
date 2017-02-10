@@ -1,3 +1,5 @@
+require_relative 'linked-list-node.rb'
+
 class Stack
     attr_reader :data
 
@@ -7,7 +9,7 @@ class Stack
 
     # Push a value onto the stack
     def push(value)
-        @data = LinkedListNode(value, self.data)
+        @data = LinkedListNode.new(value, self.data)
     end
 
     # Pop an item off the stack.
@@ -19,7 +21,8 @@ class Stack
         return @value
     end
 
-end
+    def ==(other_stack)
+        @data == other_stack.data
+    end
 
-firststack = Stack.new
-firststack.push(5)
+end
