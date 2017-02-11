@@ -1,5 +1,5 @@
 require_relative 'linked-list-node.rb'
-
+# This method does not work, does it need to be in a different file, or am I calling it incorrectly?
 def linkedlist(array)
   list = LinkedListNode.new(array.last)
   array.pop
