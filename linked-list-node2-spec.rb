@@ -1,5 +1,5 @@
 require_relative 'linked-list-node.rb'
-# This method does not work, does it need to be in a different file, or am I calling it incorrectly?
+# This method does not work, do I need to build a class and just add this method to it?
 def linkedlist(array)
   list = LinkedListNode.new(array.last)
   array.pop
@@ -8,17 +8,16 @@ def linkedlist(array)
     list = LinkedListNode.new(array.last, list)
     array.pop
   end
+  return list
 end
 
 describe "Linked List" do
 
   it "forms the list 14-nil" do
-    input = linkedlist([14])
-    
-    output = [14, nil]
+    input = LinkedListNode.new(14)
 
-    expect(input.value).to eq(output[0])
-    expect(input.next_node).to eq(output[1])
+    expect(input.value).to eq(14)
+    expect(input.next_node).to eq(nil)
 
   end
 
@@ -34,5 +33,17 @@ describe "Linked List" do
       input = input.next_node
     end
   end
+end
 
+describe "Reverse Linked List" do
+
+  it "reverses the list 13-14-nil" do
+    input = linkedlist([13, 14]).reverse
+
+    output = linkedlist([14, 13])
+
+    expect(input.value).to eq(output.value)
+    expect(input.next_node.value).to eq(output.next_node.value)
+    expect(input.next_node.next_node).to eq(output.next_node.next_node)
+  end
 end

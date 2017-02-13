@@ -16,10 +16,12 @@ class Stack
     # Pop an item off the stack.
     # Remove the last item that was pushed onto the
     # stack and return the value to the user
+    # I highly doubt this works, I have not tested it yet.
     def pop
-        @value = self.data.value
+        return nil if self.data == nil
+        value = self.data.value
         @data = self.data.next_node
-        return @value
+        return value
     end
 
     def ==(other_stack)
