@@ -7,7 +7,6 @@ describe "Push" do
 
     expect(input.pop).to eq(14)
     expect(input.pop).to eq(nil)
-
   end
 
   it "Adds 13 and 14 to the beginning of the stack" do
@@ -18,6 +17,5 @@ describe "Push" do
     expect(input.pop).to eq(13)
     expect(input.pop).to eq(14)
     expect(input.pop).to eq(nil)
-
   end
 end

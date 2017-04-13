@@ -18,12 +18,9 @@ describe "Linked List" do
 
     output = [13, 14, nil]
 
-    i = 0
-    until input.next_node == nil
-      expect(input.value).to eq(output[i])
-      i += 1
-      input = input.next_node
-    end
+    expect(input.value).to eq(output[0])
+    expect(input.next_node.value).to eq(output[1])
+    expect(input.next_node.next_node).to eq(output[2])
   end
 
 end
